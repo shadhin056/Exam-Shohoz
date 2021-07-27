@@ -12,12 +12,13 @@ import kotlinx.android.synthetic.main.row_movie.view.*
 
 class MoviesAdapter(
     private val activity: Activity,
-    private val mainRequestList: List<MovieModel>
+    private val mainRequestList: List<MovieModel>,
+    private val listener: adapterListener
 ) :
     RecyclerView.Adapter<MoviesAdapter.MyViewHolder>() {
 
     private val mainList: List<MovieModel>
-
+    private var listFiltered: List<MovieModel>
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
     init {
@@ -49,6 +50,11 @@ class MoviesAdapter(
 
         Glide.with(activity).load(currentItem.posterUrl!!.replace(" ","")).into(holder.itemView.ivLogo)
 
+        holder.itemView.llClick.setOnClickListener {
+            listener.onItemSelected(listFiltered[position])
+        }
+
+
     }
 
     override fun getItemCount(): Int {
@@ -60,6 +66,9 @@ class MoviesAdapter(
     }
     init {
         this.mainList = mainRequestList
+        listFiltered = mainList
     }
-
+    interface adapterListener {
+        fun onItemSelected(itemSelected: MovieModel?)
+    }
 }

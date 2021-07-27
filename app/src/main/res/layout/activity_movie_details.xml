@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieDetailsActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:id="@+id/txtId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="Title"
+                    android:id="@+id/txtJobTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:id="@+id/txtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="Year"
+                    android:id="@+id/txtJobDeadline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+
+                <TextView
+                    android:id="@+id/txtYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="Run Time"
+                    android:id="@+id/txtJobRecruitingCompanyProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+
+                <TextView
+                    android:id="@+id/txtRunTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="IsFeatured"
+                    android:id="@+id/txtJobIsFeatured"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:id="@+id/txtJobIsFeaturedValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="Genres"
+                    android:id="@+id/txtMinExperience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:id="@+id/txtGenres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="Director"
+                    android:id="@+id/txtmaxExperience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:id="@+id/txtDerector"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="Actor"
+                    android:id="@+id/txtMinSalary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:id="@+id/txtActor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="Plot"
+                    android:id="@+id/txtMaxSalary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+                <TextView
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:id="@+id/txtPlot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

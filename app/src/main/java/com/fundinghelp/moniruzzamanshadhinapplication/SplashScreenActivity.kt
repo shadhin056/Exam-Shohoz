@@ -3,10 +3,8 @@ package com.fundinghelp.moniruzzamanshadhinapplication
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.fundinghelp.moniruzzamanshadhinapplication.adapter.MoviesAdapter
 import com.fundinghelp.moniruzzamanshadhinapplication.view_model.ListViewModel
 import com.fundinghelp.moniruzzamanshadhinapplication.view_model.MovieViewModel
 import com.shadhin.android_jetpack.view.model.MovieModel
@@ -45,7 +43,7 @@ class SplashScreenActivity : AppCompatActivity() {
                     txtGet.text="fetching from Local DB"
                     val i = Intent(
                         this@SplashScreenActivity,
-                        MainActivity::class.java
+                        MovieListActivity::class.java
                     )
                     startActivity(i)
                 }else{
@@ -76,7 +74,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
                     val i = Intent(
                         this@SplashScreenActivity,
-                        MainActivity::class.java
+                        MovieListActivity::class.java
                     )
                     startActivity(i)
 
