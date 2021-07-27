@@ -2,7 +2,6 @@ package com.fundinghelp.moniruzzamanshadhinapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
         viewModel.getFromDB()
+
         observeViewModel()
         val mLayoutManager = LinearLayoutManager(applicationContext)
         recyclerViewJobs!!.setLayoutManager(mLayoutManager)
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observeViewModel() {
-        viewModel.users.observe(this, androidx.lifecycle.Observer { userss ->
+        viewModel.moviesGet.observe(this, androidx.lifecycle.Observer { userss ->
             userss.let {
                 //Toast.makeText(getApplication(), "From Local Database "+userss, Toast.LENGTH_LONG).show()
                 mAdapter = MoviesAdapter( this,userss)

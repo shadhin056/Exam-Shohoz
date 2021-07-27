@@ -3,11 +3,15 @@ package com.fundinghelp.moniruzzamanshadhinapplication
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.fundinghelp.moniruzzamanshadhinapplication.adapter.MoviesAdapter
+import com.fundinghelp.moniruzzamanshadhinapplication.view_model.ListViewModel
 import com.fundinghelp.moniruzzamanshadhinapplication.view_model.MovieViewModel
 import com.shadhin.android_jetpack.view.model.MovieModel
 import com.shadhin.android_jetpack.view.view_model.LDBViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 
@@ -16,13 +20,15 @@ class SplashScreenActivity : AppCompatActivity() {
     private val SPLASH_TIME_OUT = 9000
     private lateinit var movieViewModel: MovieViewModel
     private lateinit var lDBViewModel: LDBViewModel
+    private lateinit var viewModel: ListViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
         movieViewModel = ViewModelProvider(this).get(MovieViewModel::class.java)
         lDBViewModel = ViewModelProvider(this).get(LDBViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
+        viewModel.check()
 
-        requestForMovies()
         observeViewModel()
     }
     private fun requestForMovies() {
@@ -30,6 +36,23 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun observeViewModel() {
+
+        viewModel.check.observe(this, androidx.lifecycle.Observer { valueCHeck ->
+            valueCHeck.let {
+
+                if(it>0){
+                    txtGet.text="fetching from Local DB"
+                    val i = Intent(
+                        this@SplashScreenActivity,
+                        MainActivity::class.java
+                    )
+                    startActivity(i)
+                }else{
+                    txtGet.text="fetching from API"
+                    requestForMovies()
+                }
+            }
+        })
         movieViewModel.response_error.observe(this, androidx.lifecycle.Observer {
             it?.let {
                 Log.e("XXX", "Error")
@@ -40,7 +63,7 @@ class SplashScreenActivity : AppCompatActivity() {
             this,
             androidx.lifecycle.Observer {
                 it?.let {
-                    txtGet.text="fetching completed"
+                    txtGet.text="fetching from API completed"
 
                     val user = MovieModel(it.movies.get(0).id.toString(), it.movies.get(0).title, it.movies.get(0).year, it.movies.get(0).runtime, it.movies.get(0).director, it.movies.get(0).actors, it.movies.get(0).plot,it.movies.get(0).posterUrl,
                         it.movies.get(0).genres.toString()

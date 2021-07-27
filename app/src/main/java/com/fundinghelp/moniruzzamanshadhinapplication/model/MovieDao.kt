@@ -12,4 +12,7 @@ interface MovieDataDao {
     @Query("SELECT * FROM moviemodel")
     suspend fun getAllMovie(): List<MovieModel>
 
+     @Query("SELECT COUNT(movie_id) FROM moviemodel")
+     suspend fun check(): Int
+
 }

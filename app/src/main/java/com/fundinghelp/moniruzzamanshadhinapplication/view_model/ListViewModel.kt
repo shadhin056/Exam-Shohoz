@@ -9,14 +9,24 @@ import com.shadhin.android_jetpack.view.view_model.BaseViewModel
 import kotlinx.coroutines.launch
 
 class ListViewModel(application: Application) : BaseViewModel(application) {
-    val users = MutableLiveData<List<MovieModel>>()
+    val moviesGet = MutableLiveData<List<MovieModel>>()
+    val check = MutableLiveData<Int>()
 
     fun getFromDB() {
 
         launch {
-            val dogss = MovieDatabase(getApplication()).dogDao().getAllMovie()
-            users.value=dogss
+            val movies = MovieDatabase(getApplication()).dogDao().getAllMovie()
+            moviesGet.value=movies
             Toast.makeText(getApplication(), "From Database", Toast.LENGTH_LONG).show()
+        }
+
+    }
+    fun check() {
+
+        launch {
+            val movies = MovieDatabase(getApplication()).dogDao().check()
+            check.value=movies
+           // Toast.makeText(getApplication(), movies.toString(), Toast.LENGTH_LONG).show()
         }
 
     }
