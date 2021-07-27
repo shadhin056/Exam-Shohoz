@@ -14,14 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/txtOutPut"
-            android:textAlignment="center"
-            android:text="Data Loading please wait"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </TextView>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewJobs"
             android:layout_width="match_parent"

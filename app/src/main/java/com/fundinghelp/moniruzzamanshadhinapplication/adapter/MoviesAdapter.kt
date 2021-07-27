@@ -38,11 +38,14 @@ class MoviesAdapter(
     ) {
         val currentItem = mainList[position]
 
-        holder.itemView.txtJobCompanyValue.setText(currentItem.actors)
-        holder.itemView.txtJobTitleValue.setText(currentItem.director)
-        holder.itemView.txtJobDeadlineValue.setText(currentItem.genres)
-        holder.itemView.txtJobRecruitingCompanyProfileValue.setText(currentItem.posterUrl)
-        holder.itemView.txtLastDateValue.setText(currentItem.runtime)
+        holder.itemView.txtId.setText(currentItem.movie_id)
+        holder.itemView.txtTitle.setText(currentItem.title)
+        holder.itemView.txtYear.setText(currentItem.year)
+        holder.itemView.txtRunTime.setText(currentItem.runtime)
+        holder.itemView.txtGenres.setText(currentItem.genres)
+        holder.itemView.txtDerector.setText(currentItem.director)
+        holder.itemView.txtActor.setText(currentItem.actors)
+        holder.itemView.txtPlot.setText(currentItem.plot)
 
         Glide.with(activity).load(currentItem.posterUrl!!.replace(" ","")).into(holder.itemView.ivLogo)
 

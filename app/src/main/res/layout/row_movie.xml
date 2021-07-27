@@ -3,9 +3,12 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#FFFFFF"
     android:orientation="vertical">
 
     <LinearLayout
+        android:layout_margin="10dp"
+        android:background="#F1EFF4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -26,7 +29,7 @@
             </ImageView>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                  >
@@ -42,9 +45,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:textStyle="bold"
                             android:layout_weight="1"
-                            android:text="Company Name"
-                            android:id="@+id/txtJobCompany"
+                            android:text="ID"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
@@ -52,7 +55,7 @@
                         <TextView
                             android:layout_weight="1"
                             android:textAlignment="textEnd"
-                            android:id="@+id/txtJobCompanyValue"
+                            android:id="@+id/txtId"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"></TextView>
                     </LinearLayout>
@@ -62,8 +65,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+
+                            android:textStyle="bold"
                             android:layout_weight="1"
-                            android:text="Job Title"
+                            android:text="Title"
                             android:id="@+id/txtJobTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -72,7 +77,7 @@
                         <TextView
                             android:layout_weight="1"
                             android:textAlignment="textEnd"
-                            android:id="@+id/txtJobTitleValue"
+                            android:id="@+id/txtTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"></TextView>
                     </LinearLayout>
@@ -82,17 +87,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+
+                            android:textStyle="bold"
                             android:layout_weight="1"
-                            android:text="Deadline"
+                            android:text="Year"
                             android:id="@+id/txtJobDeadline"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"></TextView>
+
                         <TextView
-                            android:layout_weight="1"
-                            android:textAlignment="textEnd"
-                            android:id="@+id/txtJobDeadlineValue"
+                            android:id="@+id/txtYear"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"></TextView>
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"></TextView>
                     </LinearLayout>
 
                     <LinearLayout
@@ -101,18 +109,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+
+                            android:textStyle="bold"
                             android:layout_weight="1"
-                            android:text="RecruitingCompanyProfile"
+                            android:text="Run Time"
                             android:id="@+id/txtJobRecruitingCompanyProfile"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"></TextView>
 
                         <TextView
-                            android:layout_weight="1"
-                            android:textAlignment="textEnd"
-                            android:id="@+id/txtJobRecruitingCompanyProfileValue"
+                            android:id="@+id/txtRunTime"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"></TextView>
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"></TextView>
                     </LinearLayout>
 
                     <LinearLayout
@@ -141,15 +151,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+
+                            android:textStyle="bold"
                             android:layout_weight="1"
-                            android:text="Min Experience"
+                            android:text="Genres"
                             android:id="@+id/txtMinExperience"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"></TextView>
                         <TextView
                             android:layout_weight="1"
                             android:textAlignment="textEnd"
-                            android:id="@+id/txtMinExperienceValue"
+                            android:id="@+id/txtGenres"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"></TextView>
                     </LinearLayout>
@@ -159,15 +171,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+
+                            android:textStyle="bold"
                             android:layout_weight="1"
-                            android:text="Max Experience"
+                            android:text="Director"
                             android:id="@+id/txtmaxExperience"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"></TextView>
                         <TextView
                             android:layout_weight="1"
                             android:textAlignment="textEnd"
-                            android:id="@+id/txtmaxExperienceValue"
+                            android:id="@+id/txtDerector"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"></TextView>
                     </LinearLayout>
@@ -178,15 +192,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+
+                            android:textStyle="bold"
                             android:layout_weight="1"
-                            android:text="Min Salary"
+                            android:text="Actor"
                             android:id="@+id/txtMinSalary"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"></TextView>
                         <TextView
                             android:layout_weight="1"
                             android:textAlignment="textEnd"
-                            android:id="@+id/txtMinSalaryValue"
+                            android:id="@+id/txtActor"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"></TextView>
                     </LinearLayout>
@@ -197,58 +213,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+
+                            android:textStyle="bold"
                             android:layout_weight="1"
-                            android:text="Max Salary"
+                            android:text="Plot"
                             android:id="@+id/txtMaxSalary"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"></TextView>
                         <TextView
                             android:layout_weight="1"
                             android:textAlignment="textEnd"
-                            android:id="@+id/txtMaxSalaryValue"
+                            android:id="@+id/txtPlot"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"></TextView>
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:weightSum="2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:layout_weight="1"
-                            android:text="Last Date"
-                            android:id="@+id/txtLastDate"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"></TextView>
-                        <TextView
-                            android:layout_weight="1"
-                            android:textAlignment="textEnd"
-                            android:id="@+id/txtLastDateValue"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"></TextView>
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:weightSum="2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:layout_weight="1"
-                            android:text="Apply Instruction"
-                            android:id="@+id/txtApplyInstruction"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"></TextView>
-                        <TextView
-                            android:layout_weight="1"
-                            android:textAlignment="textEnd"
-                            android:id="@+id/txtApplyInstructionValue"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"></TextView>
-                    </LinearLayout>
-
 
                 </LinearLayout>
             </LinearLayout>

@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 class SplashScreenActivity : AppCompatActivity() {
 
+    private lateinit var user: MovieModel
     private val SPLASH_TIME_OUT = 9000
     private lateinit var movieViewModel: MovieViewModel
     private lateinit var lDBViewModel: LDBViewModel
@@ -65,10 +66,14 @@ class SplashScreenActivity : AppCompatActivity() {
                 it?.let {
                     txtGet.text="fetching from API completed"
 
-                    val user = MovieModel(it.movies.get(0).id.toString(), it.movies.get(0).title, it.movies.get(0).year, it.movies.get(0).runtime, it.movies.get(0).director, it.movies.get(0).actors, it.movies.get(0).plot,it.movies.get(0).posterUrl,
-                        it.movies.get(0).genres.toString()
-                    );
-                    lDBViewModel.storeMoviesLocally(user)
+
+                    for (i in 0 until it!!.movies.size) {
+                          user = MovieModel(it.movies.get(i).id.toString(), it.movies.get(i).title, it.movies.get(i).year, it.movies.get(i).runtime, it.movies.get(i).director, it.movies.get(i).actors, it.movies.get(i).plot,it.movies.get(i).posterUrl,
+                            it.movies.get(i).genres.toString()
+                        );
+                        lDBViewModel.storeMoviesLocally(user)
+                    }
+
                     val i = Intent(
                         this@SplashScreenActivity,
                         MainActivity::class.java
