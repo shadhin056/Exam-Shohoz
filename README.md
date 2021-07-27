@@ -9,7 +9,7 @@ It is just a Simple network calling App , Instruction Was
 3. 	run in offline mode
 4. 	If user click on an item, then go to details page
 5. 	User can filter movie via genres in list screen
-No 5 could not be completed because of the time limit
+***** No 5 could not be completed because of the time limit
 
 ## Technologies Used 
 * Kotlin Programming Language
